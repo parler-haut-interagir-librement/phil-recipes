@@ -1,0 +1,24 @@
+{
+    "manifests": {
+        "phil/ux-css": {
+            "manifest": {
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_ux_css.yaml": {
+                    "contents": [
+                        "framework:",
+                        "    asset_mapper:",
+                        "        paths:",
+                        "            vendor/phil/ux-css/dist: phil-ux",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "615acf00539e41b65fdf0f23f872169465502291"
+        }
+    }
+}

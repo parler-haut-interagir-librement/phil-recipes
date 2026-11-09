@@ -1,0 +1,16 @@
+{
+    "aliases": {},
+    "recipes": {
+        "phil/ux-css": [
+            "0.1"
+        ]
+    },
+    "branch": "main",
+    "is_contrib": true,
+    "_links": {
+        "repository": "github.com/parler-haut-interagir-librement/phil-recipes",
+        "origin_template": "{package}:{version}@github.com/parler-haut-interagir-librement/phil-recipes:main",
+        "recipe_template": "https://raw.githubusercontent.com/parler-haut-interagir-librement/phil-recipes/main/endpoint/{package_dotted}.{version}.json",
+        "recipe_template_relative": "{package_dotted}.{version}.json"
+    }
+}

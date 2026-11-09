@@ -1,0 +1,4 @@
+framework:
+    asset_mapper:
+        paths:
+            vendor/phil/ux-css/dist: phil-ux
