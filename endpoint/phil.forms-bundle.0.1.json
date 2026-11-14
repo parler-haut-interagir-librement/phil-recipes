@@ -1,0 +1,44 @@
+{
+    "manifests": {
+        "phil/forms-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\FormsBundle\\PhilFormsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_forms.yaml": {
+                    "contents": [
+                        "# Forms defined in the database, each with a page at /forms/{key}. Name the site's own address to email the entries,",
+                        "# and a Standard Webhooks secret to post them; a form with a sensitive field needs a master key of a KMS. See the",
+                        "# installation guide of phil/forms-bundle.",
+                        "phil_forms:",
+                        "    sender: null                    # the site's own address, such as site@example.com; null sends no email",
+                        "    webhook_secret: null            # whsec_\u2026, such as '%env(FORMS_WEBHOOK_SECRET)%'; null posts to no webhook",
+                        "    allow_unsealed_sensitive: false # never true unless sensitive values may lie in the database as sent",
+                        "    sealing:",
+                        "        key: null                   # a master key of the client of symfony/key-management; null: sensitive fields refused",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_forms.yaml": {
+                    "contents": [
+                        "# The page of each form, /forms/{key}.",
+                        "phil_forms:",
+                        "    resource: '@PhilFormsBundle/config/routes.php'",
+                        "    prefix: /forms",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "8322ca1e8ec0af4ea1b43edf4bd75e64a4e09936"
+        }
+    }
+}

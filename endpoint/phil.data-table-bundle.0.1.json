@@ -1,0 +1,40 @@
+{
+    "manifests": {
+        "phil/data-table-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\DataTableBundle\\PhilDataTableBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_data_table.yaml": {
+                    "contents": [
+                        "# The tables of phil/data-table-bundle: Symfony Security answers the voter attributes of actions and editing when it is",
+                        "# installed, and phil/settings-bundle keeps each user's columns and page size. The templates of cell_themes override",
+                        "# the blocks of Column::block(). See the installation guide of phil/data-table-bundle.",
+                        "phil_data_table:",
+                        "    cell_themes: []",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_data_table.yaml": {
+                    "contents": [
+                        "# The changes of a browser without JavaScript and the export of a table, behind the application's firewall.",
+                        "phil_data_table:",
+                        "    resource: '@PhilDataTableBundle/config/routes.php'",
+                        "    prefix: /_tables",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "ccc45b6cccae8b2535bce5a58d8d294f6651c6ea"
+        }
+    }
+}

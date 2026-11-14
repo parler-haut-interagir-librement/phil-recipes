@@ -1,0 +1,43 @@
+{
+    "manifests": {
+        "phil/settings-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\SettingsBundle\\PhilSettingsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_settings.yaml": {
+                    "contents": [
+                        "# The settings people change themselves, and the site's: the bundle declares the general, notifications, privacy and",
+                        "# display sections; the application and its packages add theirs. See the configuration guide of phil/settings-bundle.",
+                        "phil_settings:",
+                        "    site_role: ROLE_ADMIN",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_settings.yaml": {
+                    "contents": [
+                        "# The preferences, which visitors reach too, and the site's settings, behind the firewall of the administration.",
+                        "phil_settings:",
+                        "    resource: '@PhilSettingsBundle/config/routes.php'",
+                        "    prefix: /preferences",
+                        "",
+                        "phil_settings_site:",
+                        "    resource: '@PhilSettingsBundle/config/routes/site.php'",
+                        "    prefix: /admin/settings",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "942916213f3e40d2c32a8ae3b8e3879c566387b0"
+        }
+    }
+}

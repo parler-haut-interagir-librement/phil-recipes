@@ -1,6 +1,24 @@
 {
     "aliases": {},
     "recipes": {
+        "phil/data-table-bundle": [
+            "0.1"
+        ],
+        "phil/forms-bundle": [
+            "0.1"
+        ],
+        "phil/mentions-bundle": [
+            "0.1"
+        ],
+        "phil/onboarding-bundle": [
+            "0.1"
+        ],
+        "phil/settings-bundle": [
+            "0.1"
+        ],
+        "phil/stockroom-bundle": [
+            "0.1"
+        ],
         "phil/ux-css": [
             "0.1"
         ]

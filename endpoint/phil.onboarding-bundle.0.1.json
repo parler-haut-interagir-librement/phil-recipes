@@ -1,0 +1,40 @@
+{
+    "manifests": {
+        "phil/onboarding-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\OnboardingBundle\\PhilOnboardingBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_onboarding.yaml": {
+                    "contents": [
+                        "# The onboarding flows of the site, by identifier, each with its ordered steps; a flow may also be declared with",
+                        "# #[AsOnboardingFlow]. A question whose choices grant roles or subscriptions needs answer_grants. See the flows guide",
+                        "# of phil/onboarding-bundle.",
+                        "phil_onboarding:",
+                        "    flows: {}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_onboarding.yaml": {
+                    "contents": [
+                        "# The endpoints of the checklist and the tour, behind the firewall of the members.",
+                        "phil_onboarding:",
+                        "    resource: '@PhilOnboardingBundle/config/routes.php'",
+                        "    prefix: /onboarding",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "f9ece1c6ca1697e39ba21745f76aa9bb7a1f977f"
+        }
+    }
+}

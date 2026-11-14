@@ -1,0 +1,32 @@
+{
+    "manifests": {
+        "phil/stockroom-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\StockroomBundle\\PhilStockroomBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_stockroom.yaml": {
+                    "contents": [
+                        "# The stockroom in six tables of a Doctrine DBAL connection, which join the schema the ORM generates: run",
+                        "# doctrine:migrations:diff to create them, or phil:stockroom:schema without the ORM. See the configuration guide of",
+                        "# phil/stockroom-bundle.",
+                        "phil_stockroom:",
+                        "    store: dbal",
+                        "    connection: default",
+                        "    table_prefix: phil_stockroom_",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "a403db4b4f4044960b40613dd0c28710bf863ea5"
+        }
+    }
+}
