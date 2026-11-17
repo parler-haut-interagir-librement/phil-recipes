@@ -1,25 +1,67 @@
 {
     "aliases": {},
     "recipes": {
+        "phil/accessibility-statement-bundle": [
+            "0.1"
+        ],
+        "phil/audio-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-bundle": [
+            "0.1"
+        ],
         "phil/data-table-bundle": [
+            "0.1"
+        ],
+        "phil/embed-bundle": [
             "0.1"
         ],
         "phil/forms-bundle": [
             "0.1"
         ],
+        "phil/identity-provider-bundle": [
+            "0.1"
+        ],
+        "phil/legal-notices-bundle": [
+            "0.1"
+        ],
+        "phil/lti-bundle": [
+            "0.1"
+        ],
         "phil/mentions-bundle": [
+            "0.1"
+        ],
+        "phil/moderation-bundle": [
+            "0.1"
+        ],
+        "phil/newsletter-bundle": [
             "0.1"
         ],
         "phil/onboarding-bundle": [
             "0.1"
         ],
+        "phil/outbox-bundle": [
+            "0.1"
+        ],
+        "phil/pwa-bundle": [
+            "0.1"
+        ],
         "phil/settings-bundle": [
+            "0.1"
+        ],
+        "phil/status-page-bundle": [
             "0.1"
         ],
         "phil/stockroom-bundle": [
             "0.1"
         ],
+        "phil/terms-bundle": [
+            "0.1"
+        ],
         "phil/ux-css": [
+            "0.1"
+        ],
+        "phil/ux-easyadmin-bundle": [
             "0.1"
         ]
     },

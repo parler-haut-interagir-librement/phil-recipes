@@ -1,0 +1,29 @@
+{
+    "manifests": {
+        "phil/ux-easyadmin-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\UxEasyAdminBundle\\PhilUxEasyAdminBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_ux_easy_admin.yaml": {
+                    "contents": [
+                        "# The PHIL UX theme of the EasyAdmin back-office, linked on every page of every dashboard.",
+                        "# false: each dashboard lists phil-ux-easyadmin/phil-ux-easyadmin.css in its configureAssets().",
+                        "phil_ux_easy_admin:",
+                        "    theme: true",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "e8c17b96396898c0a57b2b1e88c8f0f632c9913b"
+        }
+    }
+}

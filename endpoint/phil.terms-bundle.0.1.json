@@ -1,0 +1,99 @@
+{
+    "manifests": {
+        "phil/terms-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\TermsBundle\\PhilTermsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "src/": "%SRC_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_terms.yaml": {
+                    "contents": [
+                        "# The policies of the site and how its members are named. App\\Terms\\Members lists nobody and App\\Terms\\CurrentMember",
+                        "# names nobody until they read the application's accounts by a stable identifier, never an email address: until then",
+                        "# the gate asks no one. See the installation guide of phil/terms-bundle.",
+                        "phil_terms:",
+                        "    policies:",
+                        "        terms: ~",
+                        "        privacy: ~",
+                        "    member_source: App\\Terms\\Members",
+                        "    member_resolver: App\\Terms\\CurrentMember",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_terms.yaml": {
+                    "contents": [
+                        "# The acceptance page and the public pages of the policies. With phil_terms.admin enabled, import",
+                        "# '@PhilTermsBundle/config/routes/admin.php' under /admin/terms, behind the firewall of the administration.",
+                        "phil_terms:",
+                        "    resource: '@PhilTermsBundle/config/routes/pages.php'",
+                        "    prefix: /terms",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Terms/CurrentMember.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Terms;",
+                        "",
+                        "use Phil\\TermsBundle\\Application\\Contract\\MemberResolver;",
+                        "",
+                        "/**",
+                        " * The stable identifier of the signed-in member, as phil/terms-bundle names them: never an email address. Until it",
+                        " * reads the application's user it names nobody, and the gate asks no one to accept.",
+                        " */",
+                        "final readonly class CurrentMember implements MemberResolver",
+                        "{",
+                        "    public function current(): ?string",
+                        "    {",
+                        "        return null;",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Terms/Members.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Terms;",
+                        "",
+                        "use Phil\\TermsBundle\\Application\\Contract\\MemberSource;",
+                        "",
+                        "/**",
+                        " * Every member of the application, by stable identifier, as phil/terms-bundle reads them for the list of who has not",
+                        " * accepted and for the reminders. Until it reads the application's accounts it lists nobody.",
+                        " */",
+                        "final readonly class Members implements MemberSource",
+                        "{",
+                        "    /**",
+                        "     * @return iterable<string>",
+                        "     */",
+                        "    public function members(): iterable",
+                        "    {",
+                        "        return [];",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "593092cb8bef5c49c5ffed1545eecadb39b083e3"
+        }
+    }
+}

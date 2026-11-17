@@ -1,0 +1,62 @@
+{
+    "manifests": {
+        "phil/lti-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\LtiBundle\\PhilLtiBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "LTI_MASTER_KEY": "lti"
+                }
+            },
+            "files": {
+                "config/packages/phil_lti.yaml": {
+                    "contents": [
+                        "# The LTI 1.3 side of the application: enable the tool, the platform, or both, and register the other side.",
+                        "# See vendor/phil/lti-bundle/doc/configuration.md for every option.",
+                        "phil_lti:",
+                        "    keys:",
+                        "        source: dbal",
+                        "        master_key: '%env(LTI_MASTER_KEY)%'",
+                        "    tool:",
+                        "        enabled: false",
+                        "        platforms: []",
+                        "    platform:",
+                        "        enabled: false",
+                        "        tools: []",
+                        "",
+                        "when@test:",
+                        "    phil_lti:",
+                        "        store: memory",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_lti.yaml": {
+                    "contents": [
+                        "phil_lti_jwks:",
+                        "    resource: '@PhilLtiBundle/config/routes/jwks.php'",
+                        "    prefix: /lti",
+                        "",
+                        "# Uncomment the side the application plays.",
+                        "#phil_lti_tool:",
+                        "#    resource: '@PhilLtiBundle/config/routes/tool.php'",
+                        "#    prefix: /lti",
+                        "#",
+                        "#phil_lti_platform:",
+                        "#    resource: '@PhilLtiBundle/config/routes/platform.php'",
+                        "#    prefix: /lti/platform",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "eceb22d62ff17f4d63a0900a50c8f9a1d2846344"
+        }
+    }
+}

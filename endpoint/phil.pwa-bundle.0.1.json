@@ -1,0 +1,48 @@
+{
+    "manifests": {
+        "phil/pwa-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\PwaBundle\\PhilPwaBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_pwa.yaml": {
+                    "contents": [
+                        "# The installable site: its manifest at /manifest.webmanifest, its service worker at /sw.js, its offline page at",
+                        "# /offline. Name the site, add its icons under assets/, and put {{ phil_pwa_head() }} in the <head> of the layout and",
+                        "# the controller phil--pwa-bundle--pwa on its <body>. See the configuration guide of phil/pwa-bundle.",
+                        "phil_pwa:",
+                        "    manifest:",
+                        "        name: 'My site'",
+                        "        short_name: 'Site'",
+                        "        theme_color: '#1b1b1b'",
+                        "        background_color: '#ffffff'",
+                        "        # icons:",
+                        "        #     - { src: images/icon-192.png, sizes: 192x192, type: image/png }",
+                        "        #     - { src: images/icon-512.png, sizes: 512x512, type: image/png, purpose: [any, maskable] }",
+                        "    service_worker:",
+                        "        precache: ['/']",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_pwa.yaml": {
+                    "contents": [
+                        "# The manifest, the service worker and the offline page, without a prefix so the worker controls the whole site.",
+                        "phil_pwa:",
+                        "    resource: '@PhilPwaBundle/config/routes.php'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "a0dc493911d362214c5ff2cc7351912d218c6b5c"
+        }
+    }
+}

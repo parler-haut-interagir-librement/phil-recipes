@@ -25,13 +25,27 @@ A `composer require` of a package listed here then applies its recipe.
 
 | Package | Versions | What the recipe does |
 |---|---|---|
+| `phil/accessibility-statement-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_accessibility_statement.yaml` and the routes of `config/routes/phil_accessibility_statement.yaml` |
+| `phil/audio-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_audio.yaml` |
+| `phil/commerce-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce.yaml` and the routes of `config/routes/phil_commerce.yaml` |
 | `phil/data-table-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_data_table.yaml` and the routes of `config/routes/phil_data_table.yaml` |
+| `phil/embed-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_embed.yaml` and the routes of `config/routes/phil_embed.yaml`, and adds `EMBED_KEY` to `.env` |
 | `phil/forms-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_forms.yaml` and the routes of `config/routes/phil_forms.yaml` |
+| `phil/identity-provider-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_identity_provider.yaml` and the routes of `config/routes/phil_identity_provider.yaml` |
+| `phil/legal-notices-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_legal_notices.yaml`, the routes of `config/routes/phil_legal_notices.yaml` and the legal notice and privacy policy to fill in `legal/`, in English and in French |
+| `phil/lti-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_lti.yaml` and the routes of `config/routes/phil_lti.yaml`, and adds `LTI_MASTER_KEY` to `.env` |
 | `phil/mentions-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_mentions.yaml` and `src/Mentions/Members.php`, the member directory to fill |
+| `phil/moderation-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_moderation.yaml` and the routes of `config/routes/phil_moderation.yaml` |
+| `phil/newsletter-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_newsletter.yaml` and the routes of `config/routes/phil_newsletter.yaml`, and adds `NEWSLETTER_SECRET` to `.env` |
 | `phil/onboarding-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_onboarding.yaml` and the routes of `config/routes/phil_onboarding.yaml` |
+| `phil/outbox-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_outbox.yaml` |
+| `phil/pwa-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_pwa.yaml` and the routes of `config/routes/phil_pwa.yaml` |
 | `phil/settings-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_settings.yaml` and the routes of `config/routes/phil_settings.yaml` |
+| `phil/status-page-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_status_page.yaml` and the routes of `config/routes/phil_status_page.yaml` |
 | `phil/stockroom-bundle` | 0.1 | Registers the bundle and writes `config/packages/phil_stockroom.yaml` |
+| `phil/terms-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_terms.yaml`, the routes of `config/routes/phil_terms.yaml` and `src/Terms/CurrentMember.php` and `src/Terms/Members.php`, the member services to fill |
 | `phil/ux-css` | 0.1 | Writes `config/packages/phil_ux_css.yaml`, which maps `dist/` in AssetMapper as `phil-ux` |
+| `phil/ux-easyadmin-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_ux_easy_admin.yaml` |
 
 ## Layout
 

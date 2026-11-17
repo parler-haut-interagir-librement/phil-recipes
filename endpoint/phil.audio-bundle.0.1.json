@@ -1,0 +1,34 @@
+{
+    "manifests": {
+        "phil/audio-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\AudioBundle\\PhilAudioBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_audio.yaml": {
+                    "contents": [
+                        "# The audio of phil/audio-bundle: see vendor/phil/audio-bundle/doc/configuration.md for every option.",
+                        "phil_audio:",
+                        "    # \"null\" serves the files as they were uploaded; \"ffmpeg\" produces the renditions and the waveform in the workers.",
+                        "    tools: 'null'",
+                        "    renditions:",
+                        "        mp3: { format: mp3, bitrate: 128 }",
+                        "    listening:",
+                        "        # The default of a creator who has not chosen: full, excerpt or purchase_only.",
+                        "        mode: full",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "672251da26f8b145d04bae4a183c090dd3397981"
+        }
+    }
+}

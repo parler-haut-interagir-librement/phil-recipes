@@ -1,0 +1,49 @@
+{
+    "manifests": {
+        "phil/status-page-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\StatusPageBundle\\PhilStatusPageBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_status_page.yaml": {
+                    "contents": [
+                        "# The status page of the application, at /status. Name its components, and the checks of phil/monitoring-bundle each",
+                        "# depends on when it is installed; incidents and maintenances go in the JSON file below. To push a snapshot outside",
+                        "# the infrastructure, give the address it is read at and declare a target. See the configuration guide of",
+                        "# phil/status-page-bundle.",
+                        "phil_status_page:",
+                        "    title: 'Service status'",
+                        "    components:",
+                        "        website: { name: Website }",
+                        "    records:",
+                        "        file: '%kernel.project_dir%/var/status/records.json'",
+                        "    # snapshot:",
+                        "    #     base_url: 'https://status.example.com/'",
+                        "    #     schedule: '5 minutes'",
+                        "    #     targets:",
+                        "    #         mirror: { type: directory, path: '/mnt/status' }",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_status_page.yaml": {
+                    "contents": [
+                        "# The status page at /status, its JSON at /status.json and its Atom feed at /status.atom.",
+                        "phil_status_page:",
+                        "    resource: '@PhilStatusPageBundle/config/routes.php'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "d33fdb97dc72587db5be1389c2afaf0adecf6217"
+        }
+    }
+}

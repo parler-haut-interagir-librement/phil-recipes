@@ -1,0 +1,44 @@
+{
+    "manifests": {
+        "phil/embed-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\EmbedBundle\\PhilEmbedBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "EMBED_KEY": "change-me-to-a-random-secret-of-32-bytes-or-more"
+                }
+            },
+            "files": {
+                "config/packages/phil_embed.yaml": {
+                    "contents": [
+                        "# The embeds of phil/embed-bundle: see vendor/phil/embed-bundle/doc/configuration.md for every option.",
+                        "phil_embed:",
+                        "    # The keys that sign the tokens: the first signs, all verify. Put a new key first to rotate them.",
+                        "    keys:",
+                        "        - { id: '1', secret: '%env(EMBED_KEY)%' }",
+                        "    embeds: {}",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_embed.yaml": {
+                    "contents": [
+                        "# The script other sites load to embed the site's pages.",
+                        "phil_embed:",
+                        "    resource: '@PhilEmbedBundle/config/routes.php'",
+                        "    prefix: /_embed",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "72c770dc8b4c1d7b4be75bf408a82e4432c7f659"
+        }
+    }
+}
