@@ -1,0 +1,48 @@
+{
+    "manifests": {
+        "phil/slides": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\Slides\\PhilSlidesBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_slides.yaml": {
+                    "contents": [
+                        "# The slides of phil/slides: see vendor/phil/slides/doc/configuration.md for every option.",
+                        "phil_slides:",
+                        "    # Where a document is cut: auto (its separators when it has one, its headings otherwise), separators, headings or both.",
+                        "    split: auto",
+                        "    # The deepest heading that starts a slide.",
+                        "    heading_level: 2",
+                        "    # The shape of a slide when the source does not say it: '16:9' or '4:3'.",
+                        "    aspect_ratio: '16:9'",
+                        "    # The role the presenter routes ask for, when config/routes/phil_slides.yaml imports them; everyone else gets 403.",
+                        "    presenter_role: ROLE_SLIDES_PRESENTER",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_slides.yaml": {
+                    "contents": [
+                        "# The presenter view of a deck and the PDF of the deck with its notes, for the role phil_slides.presenter_role only.",
+                        "# Uncomment to serve them, behind the firewall, once a service implements Phil\\Slides\\Application\\Contract\\PresentedDecks",
+                        "# (see vendor/phil/slides/doc/presenter.md). The audience page stays a route of the application's own.",
+                        "#",
+                        "#phil_slides_presenter:",
+                        "#    resource: '@PhilSlidesBundle/config/routes.php'",
+                        "#    prefix: /presenter",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "3e686aba1397bbfc5de35d2eb79e01da9d0c4c41"
+        }
+    }
+}

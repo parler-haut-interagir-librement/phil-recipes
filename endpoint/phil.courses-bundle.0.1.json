@@ -1,0 +1,63 @@
+{
+    "manifests": {
+        "phil/courses-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CoursesBundle\\PhilCoursesBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "PHIL_COURSES_CONTENT_URL": "https://content.example.org",
+                    "PHIL_COURSES_HOME_PAGE": "https://www.example.org"
+                }
+            },
+            "files": {
+                "config/packages/phil_courses.yaml": {
+                    "contents": [
+                        "# The content origin serves the files of the imported packages: another origin than the application's. The home page",
+                        "# names the learners' accounts in the cmi5 statements. The teachers who hold the role decide the second chances. See",
+                        "# the configuration guide of phil/courses-bundle, which also shows how to send the statements to a remote xAPI store.",
+                        "phil_courses:",
+                        "    timezone: UTC",
+                        "    content:",
+                        "        base_url: '%env(PHIL_COURSES_CONTENT_URL)%'",
+                        "    cmi5:",
+                        "        actor_home_page: '%env(PHIL_COURSES_HOME_PAGE)%'",
+                        "    admin:",
+                        "        role: ROLE_COURSES_TEACHER",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_courses.yaml": {
+                    "contents": [
+                        "# The pages of the courses and the administration page of the second chances, behind the firewall; the cmi5 endpoints",
+                        "# and the content, outside it.",
+                        "phil_courses:",
+                        "    resource: '@PhilCoursesBundle/config/routes.php'",
+                        "    prefix: /courses",
+                        "",
+                        "phil_courses_cmi5:",
+                        "    resource: '@PhilCoursesBundle/config/cmi5_routes.php'",
+                        "    prefix: /cmi5",
+                        "",
+                        "phil_courses_content:",
+                        "    resource: '@PhilCoursesBundle/config/content_routes.php'",
+                        "    prefix: /course-content",
+                        "",
+                        "phil_courses_admin:",
+                        "    resource: '@PhilCoursesBundle/config/admin_routes.php'",
+                        "    prefix: /admin/courses",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "33f8bd5815f8ebc42b3daa84fcd12952f9ebb41b"
+        }
+    }
+}

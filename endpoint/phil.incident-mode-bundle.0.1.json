@@ -1,0 +1,51 @@
+{
+    "manifests": {
+        "phil/incident-mode-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\IncidentModeBundle\\PhilIncidentModeBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_incident_mode.yaml": {
+                    "contents": [
+                        "# The incident mode: presets that suspend sign-ups, invitations, new messages or everything but reading, for a duration",
+                        "# always set. Generate the migration of its table with doctrine:migrations:diff, route",
+                        "# Phil\\IncidentMode\\Messenger\\LiftIncident to a transport that supports delays, and consume the transport",
+                        "# scheduler_incident_mode. See the configuration guide of phil/incident-mode-bundle.",
+                        "phil_incident_mode:",
+                        "    connection: default",
+                        "    # The restrictions established members are spared from; the application says who is established by its own",
+                        "    # EstablishedMembers service.",
+                        "    spare_established: []",
+                        "    admin:",
+                        "        role: ROLE_ADMIN",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_incident_mode.yaml": {
+                    "contents": [
+                        "# The administration of the incident mode, behind the application's firewall, and the public page that says what is",
+                        "# suspended and until when.",
+                        "phil_incident_mode_admin:",
+                        "    resource: '@PhilIncidentModeBundle/config/routes/admin.php'",
+                        "    prefix: /admin/incidents",
+                        "",
+                        "phil_incident_mode_status:",
+                        "    resource: '@PhilIncidentModeBundle/config/routes/status.php'",
+                        "    prefix: /status",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "4276456b13371d462bbc45ef5ac88bfb74915aa4"
+        }
+    }
+}

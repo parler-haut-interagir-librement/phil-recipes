@@ -10,6 +10,9 @@
         "phil/commerce-bundle": [
             "0.1"
         ],
+        "phil/courses-bundle": [
+            "0.1"
+        ],
         "phil/data-table-bundle": [
             "0.1"
         ],
@@ -20,6 +23,9 @@
             "0.1"
         ],
         "phil/identity-provider-bundle": [
+            "0.1"
+        ],
+        "phil/incident-mode-bundle": [
             "0.1"
         ],
         "phil/legal-notices-bundle": [
@@ -40,6 +46,9 @@
         "phil/onboarding-bundle": [
             "0.1"
         ],
+        "phil/organizations-bundle": [
+            "0.1"
+        ],
         "phil/outbox-bundle": [
             "0.1"
         ],
@@ -47,6 +56,9 @@
             "0.1"
         ],
         "phil/settings-bundle": [
+            "0.1"
+        ],
+        "phil/slides": [
             "0.1"
         ],
         "phil/status-page-bundle": [
