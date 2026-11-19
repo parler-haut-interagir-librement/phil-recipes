@@ -1,0 +1,45 @@
+{
+    "manifests": {
+        "phil/helpdesk-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\HelpdeskBundle\\PhilHelpdeskBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_helpdesk.yaml": {
+                    "contents": [
+                        "# The queues of the help desk and the roles of their agents. See the configuration guide of phil/helpdesk-bundle.",
+                        "phil_helpdesk:",
+                        "    queues:",
+                        "        general:",
+                        "            label: General",
+                        "            roles: [ROLE_SUPPORT]",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_helpdesk.yaml": {
+                    "contents": [
+                        "# The pages of the requesters and of the agents, behind the application's firewall.",
+                        "phil_helpdesk:",
+                        "    resource: '@PhilHelpdeskBundle/config/routes.php'",
+                        "    prefix: /help",
+                        "",
+                        "phil_helpdesk_agents:",
+                        "    resource: '@PhilHelpdeskBundle/config/routes_agents.php'",
+                        "    prefix: /support-desk",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "5123f163047eb12e8f344424c6cf3f15a98487c0"
+        }
+    }
+}

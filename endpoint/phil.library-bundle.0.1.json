@@ -1,0 +1,49 @@
+{
+    "manifests": {
+        "phil/library-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\LibraryBundle\\PhilLibraryBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_library.yaml": {
+                    "contents": [
+                        "# The library's loans and pages. Name the service that says who the member of a request is \u2014 by a card or account",
+                        "# number, never an e-mail address \u2014 for the member's page of loans. See the configuration guide of",
+                        "# phil/library-bundle.",
+                        "phil_library:",
+                        "    timezone: UTC",
+                        "    loans:",
+                        "        days: 21",
+                        "        max_renewals: 2",
+                        "        max_open: 10",
+                        "    # member_resolver: App\\Library\\Members",
+                        "    roles:",
+                        "        desk: ROLE_LIBRARIAN",
+                        "        admin: ROLE_LIBRARIAN",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_library.yaml": {
+                    "contents": [
+                        "# The catalogue, the member's loans, the desk and the administration; the staff pages ask for the roles of",
+                        "# phil_library.roles.",
+                        "phil_library:",
+                        "    resource: '@PhilLibraryBundle/config/routes.php'",
+                        "    prefix: /library",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "b4e71f90a53e53cb6899154b25c821a893d7471e"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/reservation-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\ReservationBundle\\PhilReservationBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "8dfc3a7d666f39492e8d27fbf1aedd26351d9e2c"
+        }
+    }
+}

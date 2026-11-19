@@ -1,0 +1,66 @@
+{
+    "manifests": {
+        "phil/reactions-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\ReactionsBundle\\PhilReactionsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "src/": "%SRC_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_reactions.yaml": {
+                    "contents": [
+                        "# The member who reacts. App\\Reactions\\CurrentMember names nobody until it reads the application's signed-in account by",
+                        "# a stable identifier, never an email address: until then every visitor sees what is counted. See the installation",
+                        "# guide of phil/reactions-bundle.",
+                        "phil_reactions:",
+                        "    current_member: App\\Reactions\\CurrentMember",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_reactions.yaml": {
+                    "contents": [
+                        "# The route of the plain form, which the component needs to write its address.",
+                        "phil_reactions:",
+                        "    resource: '@PhilReactionsBundle/config/routes.php'",
+                        "    prefix: /_reactions",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "src/Reactions/CurrentMember.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace App\\Reactions;",
+                        "",
+                        "use Phil\\ReactionsBundle\\Application\\Contract\\CurrentMember as ReactionsCurrentMember;",
+                        "",
+                        "/**",
+                        " * The stable identifier of the signed-in member, as phil/reactions-bundle names them: never an email address. Until it",
+                        " * reads the application's user it names nobody, and every visitor only sees what is counted.",
+                        " */",
+                        "final readonly class CurrentMember implements ReactionsCurrentMember",
+                        "{",
+                        "    public function current(): ?string",
+                        "    {",
+                        "        return null;",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "9109564be5c2cbc21c3141c3ad247a66ddcee49d"
+        }
+    }
+}

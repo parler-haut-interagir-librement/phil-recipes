@@ -1,0 +1,33 @@
+{
+    "manifests": {
+        "phil/document-import-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\DocumentImportBundle\\PhilDocumentImportBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_document_import.yaml": {
+                    "contents": [
+                        "# The importer and exporter of phil/document-import-bundle: see vendor/phil/document-import-bundle/doc/configuration.md",
+                        "# for every option.",
+                        "phil_document_import:",
+                        "    media:",
+                        "        # \"auto\": the media library of phil/media-bundle when it is installed, else files under the prefix.",
+                        "        store: auto",
+                        "    # \"auto\": every file goes through phil/upload-scan-bundle before it is read, when that bundle is installed.",
+                        "    scan: auto",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "4946533316675b78f090ace008d13e80fc2c973a"
+        }
+    }
+}

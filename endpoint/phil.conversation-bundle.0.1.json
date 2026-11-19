@@ -1,0 +1,43 @@
+{
+    "manifests": {
+        "phil/conversation-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\ConversationBundle\\PhilConversationBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "PHIL_CONVERSATION_KEY": "conversations"
+                }
+            },
+            "files": {
+                "config/packages/phil_conversation.yaml": {
+                    "contents": [
+                        "# The master key of the key management service that seals the conversations at rest: the KeyManagement component's",
+                        "# default client must hold a key of this name. See the installation guide of phil/conversation-bundle.",
+                        "phil_conversation:",
+                        "    encryption:",
+                        "        key: '%env(PHIL_CONVERSATION_KEY)%'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_conversation.yaml": {
+                    "contents": [
+                        "# The pages of the conversations, behind the application's firewall.",
+                        "phil_conversation:",
+                        "    resource: '@PhilConversationBundle/config/routes.php'",
+                        "    prefix: /messages",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "f756fd3753779b6d189d83aadc962c98ae311b18"
+        }
+    }
+}

@@ -7,7 +7,13 @@
         "phil/audio-bundle": [
             "0.1"
         ],
+        "phil/calendar-bundle": [
+            "0.1"
+        ],
         "phil/commerce-bundle": [
+            "0.1"
+        ],
+        "phil/conversation-bundle": [
             "0.1"
         ],
         "phil/courses-bundle": [
@@ -16,10 +22,16 @@
         "phil/data-table-bundle": [
             "0.1"
         ],
+        "phil/document-import-bundle": [
+            "0.1"
+        ],
         "phil/embed-bundle": [
             "0.1"
         ],
         "phil/forms-bundle": [
+            "0.1"
+        ],
+        "phil/helpdesk-bundle": [
             "0.1"
         ],
         "phil/identity-provider-bundle": [
@@ -31,7 +43,13 @@
         "phil/legal-notices-bundle": [
             "0.1"
         ],
+        "phil/library-bundle": [
+            "0.1"
+        ],
         "phil/lti-bundle": [
+            "0.1"
+        ],
+        "phil/map-bundle": [
             "0.1"
         ],
         "phil/mentions-bundle": [
@@ -55,7 +73,16 @@
         "phil/pwa-bundle": [
             "0.1"
         ],
+        "phil/reactions-bundle": [
+            "0.1"
+        ],
+        "phil/reservation-bundle": [
+            "0.1"
+        ],
         "phil/settings-bundle": [
+            "0.1"
+        ],
+        "phil/short-link-bundle": [
             "0.1"
         ],
         "phil/slides": [
@@ -68,6 +95,9 @@
             "0.1"
         ],
         "phil/terms-bundle": [
+            "0.1"
+        ],
+        "phil/user-secrets-bundle": [
             "0.1"
         ],
         "phil/ux-css": [

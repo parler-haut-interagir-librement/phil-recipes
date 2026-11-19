@@ -1,0 +1,43 @@
+{
+    "manifests": {
+        "phil/map-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\MapBundle\\PhilMapBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_map.yaml": {
+                    "contents": [
+                        "# The maps of phil/map-bundle: see vendor/phil/map-bundle/doc/configuration.md for every option.",
+                        "phil_map:",
+                        "    tiles:",
+                        "        # \"proxy\": the tiles come through the site, and the tile server never sees the visitor.",
+                        "        source: proxy",
+                        "        proxy:",
+                        "            # Tile policies ask for a user agent that names the site and a way to reach it.",
+                        "            user_agent: 'phil/map-bundle tile proxy'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_map.yaml": {
+                    "contents": [
+                        "# The tile proxy of phil/map-bundle: the browser asks the site for each tile.",
+                        "phil_map:",
+                        "    resource: '@PhilMapBundle/config/routes.php'",
+                        "    prefix: /_map",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "982f24946e2dc55baa0ba2a66563237f7a298bbf"
+        }
+    }
+}
