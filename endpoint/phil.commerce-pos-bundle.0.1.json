@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/commerce-pos-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommercePosBundle\\PhilCommercePosBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "ee6d8b7c4243ad9467a599fd11665d54d176ed01"
+        }
+    }
+}

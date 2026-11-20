@@ -1,0 +1,61 @@
+{
+    "manifests": {
+        "phil/moderation-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\ModerationBundle\\PhilModerationBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_moderation.yaml": {
+                    "contents": [
+                        "# The moderation of the site: the roles of its moderators, the content held until a first approval, when the",
+                        "# incident mode of phil/incident-mode-bundle is proposed, and the ways a member contests a decision, which a statement",
+                        "# of reasons lists. Each package that holds content plugs in its own target. See the configuration guide of",
+                        "# phil/moderation-bundle.",
+                        "phil_moderation:",
+                        "    roles:",
+                        "        - { name: moderator, attribute: ROLE_MODERATOR }",
+                        "        - { name: administrator, attribute: ROLE_ADMIN }",
+                        "    sandbox:",
+                        "        types: []",
+                        "    surge:",
+                        "        reports: 25",
+                        "        within: 3600",
+                        "    statements:",
+                        "        terms_url: ~",
+                        "        complaint_url: ~",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_moderation.yaml": {
+                    "contents": [
+                        "# The pages of the moderation behind the application's firewall, the report form, the public journal and the",
+                        "# statements of reasons addressed to a member.",
+                        "phil_moderation_admin:",
+                        "    resource: '@PhilModerationBundle/config/routes/admin.php'",
+                        "    prefix: /admin/moderation",
+                        "phil_moderation_report:",
+                        "    resource: '@PhilModerationBundle/config/routes/report.php'",
+                        "    prefix: /moderation",
+                        "phil_moderation_journal:",
+                        "    resource: '@PhilModerationBundle/config/routes/journal.php'",
+                        "    prefix: /moderation/journal",
+                        "phil_moderation_statements:",
+                        "    resource: '@PhilModerationBundle/config/routes/statement.php'",
+                        "    prefix: /moderation/statements",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "72e8f12d7809c7f34695546e39ec0aa3f4e600d2"
+        }
+    }
+}

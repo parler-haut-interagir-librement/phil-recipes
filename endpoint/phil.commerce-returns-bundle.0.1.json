@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/commerce-returns-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceReturnsBundle\\PhilCommerceReturnsBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "3a7fa9b6627e6303210c80552a6b6e354b2a666d"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "manifests": {
+        "phil/api-keys-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\ApiKeysBundle\\PhilApiKeysBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "#1": "At least 32 random bytes, hex-encoded, in .env.local or the secrets vault: php -r 'echo bin2hex(random_bytes(32)), PHP_EOL;'",
+                    "API_KEYS_HASH_KEY": ""
+                }
+            },
+            "files": {
+                "config/packages/phil_api_keys.yaml": {
+                    "contents": [
+                        "# The access tokens of phil/api-keys-bundle: see vendor/phil/api-keys-bundle/doc/installation.md for the firewall and",
+                        "# vendor/phil/api-keys-bundle/doc/configuration.md for every option.",
+                        "phil_api_keys:",
+                        "    # What starts every token, so that secret scanners recognise it.",
+                        "    prefix: pat",
+                        "    # The key of the hashes kept in the table; keep it in .env.local or the secrets vault, never in the repository.",
+                        "    hash_key: '%env(API_KEYS_HASH_KEY)%'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "c9aacccf1d7ce7002e9121b9081217113ff01fcf"
+        }
+    }
+}

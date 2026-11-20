@@ -1,0 +1,56 @@
+{
+    "manifests": {
+        "phil/virtual-classroom-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\VirtualClassroomBundle\\PhilVirtualClassroomBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "BBB_URL": "https://bbb.example.com/bigbluebutton/api/",
+                    "BBB_SECRET": "change-me-to-the-shared-secret-of-the-server"
+                }
+            },
+            "files": {
+                "config/packages/phil_virtual_classroom.yaml": {
+                    "contents": [
+                        "# Live classes on a BigBlueButton or Jitsi server: rooms, join links by role, attendance and recordings. See the",
+                        "# configuration guide of phil/virtual-classroom-bundle.",
+                        "phil_virtual_classroom:",
+                        "    providers:",
+                        "        main:",
+                        "            type: bigbluebutton",
+                        "            url: '%env(BBB_URL)%'",
+                        "            secret: '%env(BBB_SECRET)%'",
+                        "    # moderator_role: ROLE_VIRTUAL_CLASSROOM_MODERATOR",
+                        "    # courses: { threshold: 75 }",
+                        "",
+                        "when@dev:",
+                        "    phil_virtual_classroom:",
+                        "        allow_localhost: true",
+                        "",
+                        "when@test:",
+                        "    phil_virtual_classroom:",
+                        "        store: memory",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_virtual_classroom.yaml": {
+                    "contents": [
+                        "phil_virtual_classroom:",
+                        "    resource: '@PhilVirtualClassroomBundle/config/routes.php'",
+                        "    prefix: /virtual-classroom",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "33c55bfb018018fa15b680994e804ecf40bc48c5"
+        }
+    }
+}

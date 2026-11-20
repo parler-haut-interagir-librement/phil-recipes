@@ -1,0 +1,30 @@
+{
+    "manifests": {
+        "phil/commerce-catalog-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceCatalogBundle\\PhilCommerceCatalogBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/routes/phil_commerce_catalog.yaml": {
+                    "contents": [
+                        "# The files of the product feeds, served at /product-feeds/{feed} for the feeds declared under",
+                        "# phil_commerce_catalog.product_feeds; a feed not declared is not found. See",
+                        "# vendor/phil/commerce-catalog-bundle/doc/product-feeds.md.",
+                        "phil_commerce_catalog:",
+                        "    resource: '@PhilCommerceCatalogBundle/config/routes.php'",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "1da64b8f1d3bc4b9ba39c2494319611c8dcab5af"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/commerce-product-template-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceProductTemplateBundle\\PhilCommerceProductTemplateBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "dde64d5167105be5ebac680e50696e39fdf4286d"
+        }
+    }
+}

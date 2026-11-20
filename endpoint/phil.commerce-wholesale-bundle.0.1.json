@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/commerce-wholesale-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceWholesaleBundle\\PhilCommerceWholesaleBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "588101445de8ca3e11388ac0bda35853295ffdd3"
+        }
+    }
+}

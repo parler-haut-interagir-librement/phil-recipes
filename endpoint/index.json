@@ -4,6 +4,12 @@
         "phil/accessibility-statement-bundle": [
             "0.1"
         ],
+        "phil/ai-bundle": [
+            "0.1"
+        ],
+        "phil/api-keys-bundle": [
+            "0.1"
+        ],
         "phil/audio-bundle": [
             "0.1"
         ],
@@ -13,11 +19,42 @@
         "phil/commerce-bundle": [
             "0.1"
         ],
+        "phil/commerce-catalog-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-logistics-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-pos-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-product-template-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-promotions-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-returns-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-stored-value-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-subscription-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-syndication-bundle": [
+            "0.1"
+        ],
+        "phil/commerce-wholesale-bundle": [
+            "0.1"
+        ],
         "phil/conversation-bundle": [
             "0.1"
         ],
         "phil/courses-bundle": [
-            "0.1"
+            "0.1",
+            "0.2"
         ],
         "phil/data-table-bundle": [
             "0.1"
@@ -63,7 +100,8 @@
             "0.1"
         ],
         "phil/moderation-bundle": [
-            "0.1"
+            "0.1",
+            "0.3"
         ],
         "phil/newsletter-bundle": [
             "0.1"
@@ -72,7 +110,8 @@
             "0.1"
         ],
         "phil/organizations-bundle": [
-            "0.1"
+            "0.1",
+            "0.2"
         ],
         "phil/outbox-bundle": [
             "0.1"
@@ -107,6 +146,9 @@
         "phil/terms-bundle": [
             "0.1"
         ],
+        "phil/usage-meter-bundle": [
+            "0.1"
+        ],
         "phil/user-secrets-bundle": [
             "0.1"
         ],
@@ -114,6 +156,9 @@
             "0.1"
         ],
         "phil/ux-easyadmin-bundle": [
+            "0.1"
+        ],
+        "phil/virtual-classroom-bundle": [
             "0.1"
         ]
     },

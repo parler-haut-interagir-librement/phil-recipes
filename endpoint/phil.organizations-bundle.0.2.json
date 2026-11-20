@@ -1,0 +1,102 @@
+{
+    "manifests": {
+        "phil/organizations-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\OrganizationsBundle\\PhilOrganizationsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "migrations/": "migrations/"
+                },
+                "env": {
+                    "#1": "The key of the invitation tokens, at least 32 bytes: set it with bin/console secrets:set ORGANIZATIONS_INVITATION_KEY",
+                    "ORGANIZATIONS_INVITATION_KEY": ""
+                }
+            },
+            "files": {
+                "config/packages/phil_organizations.yaml": {
+                    "contents": [
+                        "# Organizations, their members and roles, teams, units in a tree, and invitations. Members are named by the stable",
+                        "# subject identifier of the user provider, never an e-mail address. See the configuration guide of",
+                        "# phil/organizations-bundle.",
+                        "phil_organizations:",
+                        "    invitations:",
+                        "        # At least 32 bytes, from the secrets vault: bin/console secrets:set ORGANIZATIONS_INVITATION_KEY",
+                        "        hash_key: '%env(ORGANIZATIONS_INVITATION_KEY)%'",
+                        "    # roles:",
+                        "    #     billing: { permissions: [billing.read, billing.pay] }",
+                        "    # team_roles:",
+                        "    #     reviewer: { permissions: [review.approve] }",
+                        "    # unit_roles:",
+                        "    #     instructor: { permissions: [courses.assign] }",
+                        "    # units:",
+                        "    #     single_membership: true",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_organizations.yaml": {
+                    "contents": [
+                        "# The administration pages of the units, behind the firewall of the application.",
+                        "phil_organizations_units:",
+                        "    resource: '@PhilOrganizationsBundle/config/routes/units.php'",
+                        "    prefix: /admin/organizations",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "migrations/Version20261120000000.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace DoctrineMigrations;",
+                        "",
+                        "use Doctrine\\DBAL\\Schema\\Schema;",
+                        "use Doctrine\\Migrations\\AbstractMigration;",
+                        "use Override;",
+                        "use Phil\\OrganizationsBundle\\Infrastructure\\Dbal\\OrganizationTables;",
+                        "",
+                        "/**",
+                        " * The tables of phil/organizations-bundle the database lacks: those of the units and their members on a database of",
+                        " * 0.1, every table on an empty one.",
+                        " */",
+                        "final class Version20261120000000 extends AbstractMigration",
+                        "{",
+                        "    #[Override]",
+                        "    public function getDescription(): string",
+                        "    {",
+                        "        return 'phil/organizations-bundle 0.2: the tables of the units and their members.';",
+                        "    }",
+                        "",
+                        "    #[Override]",
+                        "    public function up(Schema $schema): void",
+                        "    {",
+                        "        $tables = OrganizationTables::for($this->connection->getDatabasePlatform());",
+                        "",
+                        "        foreach ($tables->upgrade($schema, $this->connection->createSchemaManager()->createComparator()) as $statement) {",
+                        "            $this->addSql($statement);",
+                        "        }",
+                        "    }",
+                        "",
+                        "    #[Override]",
+                        "    public function down(Schema $schema): void",
+                        "    {",
+                        "        foreach (OrganizationTables::for($this->connection->getDatabasePlatform())->downgrade() as $statement) {",
+                        "            $this->addSql($statement);",
+                        "        }",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "9c477fe67e6b029c3729a853223750bb0cf1463b"
+        }
+    }
+}

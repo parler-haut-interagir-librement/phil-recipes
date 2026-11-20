@@ -1,0 +1,51 @@
+{
+    "manifests": {
+        "phil/commerce-syndication-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceSyndicationBundle\\PhilCommerceSyndicationBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "#1": "The code partners know this application by, and the whsk_ Ed25519 secret key its messages are signed with:",
+                    "#2": "see vendor/phil/commerce-syndication-bundle/doc/installation.md to generate the key pair.",
+                    "SYNDICATION_IDENTITY": "shop",
+                    "SYNDICATION_SIGNING_KEY": ""
+                }
+            },
+            "files": {
+                "config/packages/phil_commerce_syndication.yaml": {
+                    "contents": [
+                        "# Catalogue syndication between partners: see vendor/phil/commerce-syndication-bundle/doc/installation.md for every",
+                        "# option; the tables join the schema the ORM generates (doctrine:migrations:diff).",
+                        "phil_commerce_syndication:",
+                        "    # The code partners know this application by: the audience every message sent here must carry.",
+                        "    identity: '%env(SYNDICATION_IDENTITY)%'",
+                        "    # The secret key every outgoing message is signed with; its public half, whpk_\u2026, goes to the partners.",
+                        "    signing_key: '%env(SYNDICATION_SIGNING_KEY)%'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_commerce_syndication.yaml": {
+                    "contents": [
+                        "# The endpoint partners post their messages to, one path per partner. Exclude it from CSRF protection and from",
+                        "# authentication: the signature of each message admits it.",
+                        "phil_commerce_syndication:",
+                        "    path: /syndication/{partner}",
+                        "    methods: [POST]",
+                        "    controller: Phil\\CommerceSyndicationBundle\\Infrastructure\\Http\\SyndicationWebhookController",
+                        "    requirements: { partner: '[a-z0-9][a-z0-9_.-]{0,62}' }",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "979f71abd4a429fbcbeb94d21adbba58200f1f65"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "manifests": {
+        "phil/usage-meter-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\UsageMeterBundle\\PhilUsageMeterBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_usage_meter.yaml": {
+                    "contents": [
+                        "# The meters of phil/usage-meter-bundle: see vendor/phil/usage-meter-bundle/doc/configuration.md for every option.",
+                        "phil_usage_meter:",
+                        "    # The counters in two tables of a DBAL connection, which join the schema the ORM generates.",
+                        "    store: dbal",
+                        "    dbal:",
+                        "        connection: default",
+                        "    # One entry per meter, with its limit and one period, for example:",
+                        "    #     exports: { limit: 3, calendar: month, timezone: UTC }",
+                        "    meters: {}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "e38299f8aad6bf97fb3c9df4df0442ad01795469"
+        }
+    }
+}

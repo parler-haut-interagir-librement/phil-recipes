@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/commerce-stored-value-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceStoredValueBundle\\PhilCommerceStoredValueBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "4d9e110ad957ba77091cc7c76b1885b181f20128"
+        }
+    }
+}

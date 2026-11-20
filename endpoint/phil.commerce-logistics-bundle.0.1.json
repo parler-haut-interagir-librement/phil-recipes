@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/commerce-logistics-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceLogisticsBundle\\PhilCommerceLogisticsBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "95a55d94cdee2ca5ad07daff73fe44b0c94194a6"
+        }
+    }
+}
