@@ -28,6 +28,9 @@
         "phil/embed-bundle": [
             "0.1"
         ],
+        "phil/error-tracking-bundle": [
+            "0.1"
+        ],
         "phil/forms-bundle": [
             "0.1"
         ],
@@ -35,7 +38,8 @@
             "0.1"
         ],
         "phil/identity-provider-bundle": [
-            "0.1"
+            "0.1",
+            "0.3"
         ],
         "phil/incident-mode-bundle": [
             "0.1"
@@ -44,6 +48,9 @@
             "0.1"
         ],
         "phil/library-bundle": [
+            "0.1"
+        ],
+        "phil/licensing-bundle": [
             "0.1"
         ],
         "phil/lti-bundle": [
@@ -69,6 +76,9 @@
         ],
         "phil/outbox-bundle": [
             "0.1"
+        ],
+        "phil/privacy-bundle": [
+            "0.2"
         ],
         "phil/pwa-bundle": [
             "0.1"

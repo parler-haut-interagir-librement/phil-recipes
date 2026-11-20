@@ -34,12 +34,14 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/data-table-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_data_table.yaml` and the routes of `config/routes/phil_data_table.yaml` |
 | `phil/document-import-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_document_import.yaml` |
 | `phil/embed-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_embed.yaml` and the routes of `config/routes/phil_embed.yaml`, and adds `EMBED_KEY` to `.env` |
+| `phil/error-tracking-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_error_tracking.yaml` and the routes of `config/routes/phil_error_tracking.yaml` |
 | `phil/forms-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_forms.yaml` and the routes of `config/routes/phil_forms.yaml` |
 | `phil/helpdesk-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_helpdesk.yaml` and the routes of `config/routes/phil_helpdesk.yaml` |
-| `phil/identity-provider-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_identity_provider.yaml` and the routes of `config/routes/phil_identity_provider.yaml` |
+| `phil/identity-provider-bundle` | 0.1, 0.3 | Registers the bundle, writes `config/packages/phil_identity_provider.yaml` and the routes of `config/routes/phil_identity_provider.yaml`; from 0.3, with `public_origin` read from `APP_PUBLIC_ORIGIN` |
 | `phil/incident-mode-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_incident_mode.yaml` and the routes of `config/routes/phil_incident_mode.yaml` |
 | `phil/legal-notices-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_legal_notices.yaml`, the routes of `config/routes/phil_legal_notices.yaml` and the legal notice and privacy policy to fill in `legal/`, in English and in French |
 | `phil/library-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_library.yaml` and the routes of `config/routes/phil_library.yaml` |
+| `phil/licensing-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_licensing.yaml` |
 | `phil/lti-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_lti.yaml` and the routes of `config/routes/phil_lti.yaml`, and adds `LTI_MASTER_KEY` to `.env` |
 | `phil/map-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_map.yaml` and the routes of `config/routes/phil_map.yaml` |
 | `phil/mentions-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_mentions.yaml` and `src/Mentions/Members.php`, the member directory to fill |
@@ -48,6 +50,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/onboarding-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_onboarding.yaml` and the routes of `config/routes/phil_onboarding.yaml` |
 | `phil/organizations-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_organizations.yaml`, and adds `ORGANIZATIONS_INVITATION_KEY` to `.env` |
 | `phil/outbox-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_outbox.yaml` |
+| `phil/privacy-bundle` | 0.2 | Registers the bundle, writes `config/packages/phil_privacy.yaml`, with `public_origin` read from `APP_PUBLIC_ORIGIN` |
 | `phil/pwa-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_pwa.yaml` and the routes of `config/routes/phil_pwa.yaml` |
 | `phil/reactions-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_reactions.yaml`, the routes of `config/routes/phil_reactions.yaml` and `src/Reactions/CurrentMember.php`, the member service to fill |
 | `phil/reservation-bundle` | 0.1 | Registers the bundle |
