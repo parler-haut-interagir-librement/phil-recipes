@@ -49,7 +49,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/newsletter-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_newsletter.yaml` and the routes of `config/routes/phil_newsletter.yaml`, and adds `NEWSLETTER_SECRET` to `.env` |
 | `phil/onboarding-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_onboarding.yaml` and the routes of `config/routes/phil_onboarding.yaml` |
 | `phil/organizations-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_organizations.yaml`, and adds `ORGANIZATIONS_INVITATION_KEY` to `.env` |
-| `phil/outbox-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_outbox.yaml` |
+| `phil/outbox-bundle` | 0.1, 0.2 | Registers the bundle, writes `config/packages/phil_outbox.yaml`; from 0.2, with `relay.unknown_type_grace` |
 | `phil/privacy-bundle` | 0.2 | Registers the bundle, writes `config/packages/phil_privacy.yaml`, with `public_origin` read from `APP_PUBLIC_ORIGIN` |
 | `phil/pwa-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_pwa.yaml` and the routes of `config/routes/phil_pwa.yaml` |
 | `phil/reactions-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_reactions.yaml`, the routes of `config/routes/phil_reactions.yaml` and `src/Reactions/CurrentMember.php`, the member service to fill |

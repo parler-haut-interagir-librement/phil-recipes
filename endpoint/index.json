@@ -114,7 +114,8 @@
             "0.2"
         ],
         "phil/outbox-bundle": [
-            "0.1"
+            "0.1",
+            "0.2"
         ],
         "phil/privacy-bundle": [
             "0.2"
