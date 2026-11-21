@@ -38,6 +38,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/forms-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_forms.yaml` and the routes of `config/routes/phil_forms.yaml` |
 | `phil/helpdesk-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_helpdesk.yaml` and the routes of `config/routes/phil_helpdesk.yaml` |
 | `phil/identity-provider-bundle` | 0.1, 0.3 | Registers the bundle, writes `config/packages/phil_identity_provider.yaml` and the routes of `config/routes/phil_identity_provider.yaml`; from 0.3, with `public_origin` read from `APP_PUBLIC_ORIGIN` |
+| `phil/identity-provider-google` | 0.1 | Registers the bundle, writes `config/packages/phil_identity_provider_google.yaml` and the routes of `config/routes/phil_identity_provider_google.yaml`, and adds `GOOGLE_CLIENT_ID` to `.env` |
 | `phil/incident-mode-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_incident_mode.yaml` and the routes of `config/routes/phil_incident_mode.yaml` |
 | `phil/legal-notices-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_legal_notices.yaml`, the routes of `config/routes/phil_legal_notices.yaml` and the legal notice and privacy policy to fill in `legal/`, in English and in French |
 | `phil/library-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_library.yaml` and the routes of `config/routes/phil_library.yaml` |

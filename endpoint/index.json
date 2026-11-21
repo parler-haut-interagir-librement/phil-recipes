@@ -78,6 +78,9 @@
             "0.1",
             "0.3"
         ],
+        "phil/identity-provider-google": [
+            "0.1"
+        ],
         "phil/incident-mode-bundle": [
             "0.1"
         ],
