@@ -22,6 +22,9 @@
         "phil/commerce-catalog-bundle": [
             "0.1"
         ],
+        "phil/commerce-consignment-bundle": [
+            "0.1"
+        ],
         "phil/commerce-logistics-bundle": [
             "0.1"
         ],
@@ -106,6 +109,9 @@
             "0.1",
             "0.3"
         ],
+        "phil/newsletter-archive": [
+            "0.1"
+        ],
         "phil/newsletter-bundle": [
             "0.1"
         ],
@@ -130,6 +136,12 @@
             "0.1"
         ],
         "phil/reservation-bundle": [
+            "0.1"
+        ],
+        "phil/reviews-bundle": [
+            "0.1"
+        ],
+        "phil/saml-sp-bundle": [
             "0.1"
         ],
         "phil/settings-bundle": [

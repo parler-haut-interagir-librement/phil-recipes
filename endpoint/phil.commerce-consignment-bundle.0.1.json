@@ -1,0 +1,34 @@
+{
+    "manifests": {
+        "phil/commerce-consignment-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceConsignmentBundle\\PhilCommerceConsignmentBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_commerce_consignment.yaml": {
+                    "contents": [
+                        "# Stock the shop owns and stock left on consignment, side by side on one SKU. Which units leave first when both are on",
+                        "# hand: owned_first, consigned_first or oldest_first, for every SKU or for some. See the configuration guide of",
+                        "# phil/commerce-consignment-bundle.",
+                        "phil_commerce_consignment:",
+                        "    issue_order: oldest_first",
+                        "    # issue_order_by_sku:",
+                        "    #     BOOK-123: consigned_first",
+                        "    # The statements' numbers: this prefix, then eight digits.",
+                        "    # statement_number_prefix: ST-",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "f0e4fd6a2e618067d7e918324959673031b4cc86"
+        }
+    }
+}
