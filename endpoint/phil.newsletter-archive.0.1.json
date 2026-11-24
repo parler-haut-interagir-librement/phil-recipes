@@ -1,0 +1,39 @@
+{
+    "manifests": {
+        "phil/newsletter-archive": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\NewsletterArchive\\PhilNewsletterArchiveBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_newsletter_archive.yaml": {
+                    "contents": [
+                        "# The public archive of the newsletter: see vendor/phil/newsletter-archive/doc/configuration.md.",
+                        "phil_newsletter_archive:",
+                        "    page_size: 20",
+                        "    # The service of a Phil\\Slug\\Slugger, from phil/slug-bundle for one; by default, a TransliteratingSlugger.",
+                        "    slugger: ~",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_newsletter_archive.yaml": {
+                    "contents": [
+                        "phil_newsletter_archive:",
+                        "    resource: '@PhilNewsletterArchiveBundle/config/routes.php'",
+                        "    prefix: /newsletter/archive",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "b6641ba5f755859d443a917a8a3c45acb861acb2"
+        }
+    }
+}

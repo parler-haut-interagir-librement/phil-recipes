@@ -1,0 +1,43 @@
+{
+    "manifests": {
+        "phil/reviews-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\ReviewsBundle\\PhilReviewsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_reviews.yaml": {
+                    "contents": [
+                        "# The types of subject the site reviews, each with its scale, its criteria and the positive labels it offers as",
+                        "# superlatives. See the configuration guide of phil/reviews-bundle for every option: the participants, the weighted",
+                        "# average, the removal criteria, the erasure and the rate limits.",
+                        "phil_reviews:",
+                        "    types:",
+                        "        product:",
+                        "            criteria: [quality, value]",
+                        "            superlatives: [well-made, great-value, as-described]",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_reviews.yaml": {
+                    "contents": [
+                        "# The pages of the reviews: /reviews/{type}/{id}, and the forms that post to them.",
+                        "phil_reviews:",
+                        "    resource: '@PhilReviewsBundle/config/routes.php'",
+                        "    prefix: /reviews",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "1910b492e0e04aa2f2c44335400d2507b5cf8c70"
+        }
+    }
+}

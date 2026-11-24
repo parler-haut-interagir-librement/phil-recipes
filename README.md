@@ -29,6 +29,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/audio-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_audio.yaml` |
 | `phil/calendar-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_calendar.yaml` and the routes of `config/routes/phil_calendar.yaml` |
 | `phil/commerce-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce.yaml` and the routes of `config/routes/phil_commerce.yaml` |
+| `phil/commerce-consignment-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce_consignment.yaml` |
 | `phil/conversation-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_conversation.yaml` and the routes of `config/routes/phil_conversation.yaml`, and adds `PHIL_CONVERSATION_KEY` to `.env` |
 | `phil/courses-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_courses.yaml` and the routes of `config/routes/phil_courses.yaml`, and adds `PHIL_COURSES_CONTENT_URL` and `PHIL_COURSES_HOME_PAGE` to `.env` |
 | `phil/data-table-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_data_table.yaml` and the routes of `config/routes/phil_data_table.yaml` |
@@ -46,6 +47,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/map-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_map.yaml` and the routes of `config/routes/phil_map.yaml` |
 | `phil/mentions-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_mentions.yaml` and `src/Mentions/Members.php`, the member directory to fill |
 | `phil/moderation-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_moderation.yaml` and the routes of `config/routes/phil_moderation.yaml` |
+| `phil/newsletter-archive` | 0.1 | Registers the bundle, writes `config/packages/phil_newsletter_archive.yaml` and the routes of `config/routes/phil_newsletter_archive.yaml` |
 | `phil/newsletter-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_newsletter.yaml` and the routes of `config/routes/phil_newsletter.yaml`, and adds `NEWSLETTER_SECRET` to `.env` |
 | `phil/onboarding-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_onboarding.yaml` and the routes of `config/routes/phil_onboarding.yaml` |
 | `phil/organizations-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_organizations.yaml`, and adds `ORGANIZATIONS_INVITATION_KEY` to `.env` |
@@ -54,6 +56,8 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/pwa-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_pwa.yaml` and the routes of `config/routes/phil_pwa.yaml` |
 | `phil/reactions-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_reactions.yaml`, the routes of `config/routes/phil_reactions.yaml` and `src/Reactions/CurrentMember.php`, the member service to fill |
 | `phil/reservation-bundle` | 0.1 | Registers the bundle |
+| `phil/reviews-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_reviews.yaml` and the routes of `config/routes/phil_reviews.yaml` |
+| `phil/saml-sp-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_saml_sp.yaml` and the routes of `config/routes/phil_saml_sp.yaml`, and adds `SAML_SP_CERTIFICATE` and `SAML_SP_PRIVATE_KEY` to `.env` |
 | `phil/settings-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_settings.yaml` and the routes of `config/routes/phil_settings.yaml` |
 | `phil/short-link-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_short_link.yaml` and the routes of `config/routes/phil_short_link.yaml`, and adds `SHORT_LINK_HOST` and `SHORT_LINK_TARGET_HOST` to `.env` |
 | `phil/slides` | 0.1 | Registers the bundle, writes `config/packages/phil_slides.yaml` and the routes of `config/routes/phil_slides.yaml` |
