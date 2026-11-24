@@ -1,0 +1,46 @@
+{
+    "manifests": {
+        "phil/identity-provider-google": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\IdentityProviderGoogle\\PhilIdentityProviderGoogleBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "GOOGLE_CLIENT_ID": ""
+                }
+            },
+            "files": {
+                "config/packages/phil_identity_provider_google.yaml": {
+                    "contents": [
+                        "# Sign-in with Google for phil/identity-provider-bundle, whose module \"external\" is on. The client ID comes from the",
+                        "# Google Cloud console; the secret goes in Symfony secrets: php bin/console secrets:set GOOGLE_CLIENT_SECRET",
+                        "phil_identity_provider_google:",
+                        "    client_id: '%env(GOOGLE_CLIENT_ID)%'",
+                        "    client_secret: '%env(GOOGLE_CLIENT_SECRET)%'",
+                        "    # hosted_domains: ['example.com']",
+                        "    # risc:",
+                        "    #     enabled: true",
+                        "    #     holds_pool: cache.identity_holds",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_identity_provider_google.yaml": {
+                    "contents": [
+                        "phil_identity_provider_google:",
+                        "    resource: '@PhilIdentityProviderGoogleBundle/config/routes.php'",
+                        "    prefix: /identity/google",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "6585227e3bf7b915e0e44886b0deaec993ee06a2"
+        }
+    }
+}
