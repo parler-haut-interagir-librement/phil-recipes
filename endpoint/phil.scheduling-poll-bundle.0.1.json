@@ -1,0 +1,57 @@
+{
+    "manifests": {
+        "phil/scheduling-poll-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\SchedulingPollBundle\\PhilSchedulingPollBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "#1": "A key of the personal links, 32 bytes or more: php -r 'echo bin2hex(random_bytes(32)), PHP_EOL;'",
+                    "SCHEDULING_POLL_LINK_KEY": ""
+                }
+            },
+            "files": {
+                "config/packages/phil_scheduling_poll.yaml": {
+                    "contents": [
+                        "# The polls of availabilities. The personal links are hashed under the keys below and point to the answer page, the",
+                        "# route phil_scheduling_poll_answer. See the installation guide of phil/scheduling-poll-bundle.",
+                        "phil_scheduling_poll:",
+                        "    links:",
+                        "        keys: ['%env(SCHEDULING_POLL_LINK_KEY)%']",
+                        "        page: 'https://example.org/scheduling-poll/answer'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_scheduling_poll.yaml": {
+                    "contents": [
+                        "# The pages of the polls and the answer page of the personal links.",
+                        "phil_scheduling_poll:",
+                        "    resource: '@PhilSchedulingPollBundle/config/routes.php'",
+                        "    prefix: /scheduling-poll",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "post-install.txt": {
+                    "contents": [
+                        "  * Set <comment>SCHEDULING_POLL_LINK_KEY</> as a secret of Symfony, and <comment>links.page</> in <comment>config/packages/phil_scheduling_poll.yaml</>.",
+                        "  * Install the recipes of the kit the pages draw, each with",
+                        "    <comment>php bin/console ux:install <recipe> --kit=github.com/parler-haut-interagir-librement/ux-kit</>:",
+                        "    table, field, input, native-select and button.",
+                        "  * Create the tables: <comment>php bin/console doctrine:migrations:diff</> then <comment>php bin/console doctrine:migrations:migrate</>.",
+                        "  * Run a worker: <comment>php bin/console messenger:consume scheduler_phil_scheduling_poll async</>.",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "6891bfde1d836d3f3b17847245d922bc88039bfe"
+        }
+    }
+}
