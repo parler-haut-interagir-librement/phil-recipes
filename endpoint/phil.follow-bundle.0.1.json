@@ -1,0 +1,51 @@
+{
+    "manifests": {
+        "phil/follow-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\FollowBundle\\PhilFollowBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_follow.yaml": {
+                    "contents": [
+                        "# Who follows what, and how they hear of it through phil/notifications-bundle. With Symfony Security, name a FollowAccess",
+                        "# service in \"access\". See the configuration guide of phil/follow-bundle.",
+                        "phil_follow:",
+                        "    connection: default",
+                        "    # access: App\\Follow\\Access",
+                        "    # events: [reply.created, mention.created]",
+                        "    mutual:",
+                        "        enabled: false",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_follow.yaml": {
+                    "contents": [
+                        "# The forms of the templates: follow, change level, unfollow, and the requests.",
+                        "phil_follow:",
+                        "    resource: '@PhilFollowBundle/config/routes.php'",
+                        "    prefix: /follow",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "post-install.txt": {
+                    "contents": [
+                        "  * Create the tables: <comment>php bin/console doctrine:migrations:diff</> then <comment>php bin/console doctrine:migrations:migrate</>.",
+                        "  * With Messenger, route <comment>Phil\\FollowBundle\\Application\\Message\\FanOutActivity</> to an asynchronous transport.",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "7016113e467fdefb3d4fbdf31220eb957cd6900d"
+        }
+    }
+}

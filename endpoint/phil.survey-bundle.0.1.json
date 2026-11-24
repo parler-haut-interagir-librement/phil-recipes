@@ -1,0 +1,58 @@
+{
+    "manifests": {
+        "phil/survey-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\SurveyBundle\\PhilSurveyBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_survey.yaml": {
+                    "contents": [
+                        "# The surveys of the site. An ending may redirect only to the origins listed below. See the configuration guide of",
+                        "# phil/survey-bundle.",
+                        "phil_survey:",
+                        "    connection: default",
+                        "    redirect_origins: []",
+                        "    schedule:",
+                        "        enabled: true",
+                        "",
+                        "when@dev:",
+                        "    phil_survey:",
+                        "        allow_localhost: true",
+                        "",
+                        "when@test:",
+                        "    phil_survey:",
+                        "        allow_localhost: true",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_survey.yaml": {
+                    "contents": [
+                        "# The pages of the surveys and their results.",
+                        "phil_survey:",
+                        "    resource: '@PhilSurveyBundle/config/routes.php'",
+                        "    prefix: /survey",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "post-install.txt": {
+                    "contents": [
+                        "  * Create the tables: <comment>php bin/console doctrine:migrations:diff</> then <comment>php bin/console doctrine:migrations:migrate</>.",
+                        "  * Run the purge: <comment>php bin/console messenger:consume scheduler_phil_survey</>.",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "f389b7e9a3672bce0be9791414b4f9b21f8d1cd6"
+        }
+    }
+}

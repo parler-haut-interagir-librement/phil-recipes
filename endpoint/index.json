@@ -37,6 +37,9 @@
         "phil/commerce-promotions-bundle": [
             "0.1"
         ],
+        "phil/commerce-reports-bundle": [
+            "0.1"
+        ],
         "phil/commerce-returns-bundle": [
             "0.1"
         ],
@@ -65,10 +68,22 @@
         "phil/document-import-bundle": [
             "0.1"
         ],
+        "phil/email-address-bundle": [
+            "0.1"
+        ],
         "phil/embed-bundle": [
             "0.1"
         ],
         "phil/error-tracking-bundle": [
+            "0.1"
+        ],
+        "phil/faq-bundle": [
+            "0.1"
+        ],
+        "phil/feed-bundle": [
+            "0.1"
+        ],
+        "phil/follow-bundle": [
             "0.1"
         ],
         "phil/forms-bundle": [
@@ -144,6 +159,9 @@
         "phil/saml-sp-bundle": [
             "0.1"
         ],
+        "phil/scheduling-poll-bundle": [
+            "0.1"
+        ],
         "phil/settings-bundle": [
             "0.1"
         ],
@@ -157,6 +175,9 @@
             "0.1"
         ],
         "phil/stockroom-bundle": [
+            "0.1"
+        ],
+        "phil/survey-bundle": [
             "0.1"
         ],
         "phil/terms-bundle": [

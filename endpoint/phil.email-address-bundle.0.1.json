@@ -1,0 +1,43 @@
+{
+    "manifests": {
+        "phil/email-address-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\EmailAddressBundle\\PhilEmailAddressBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_email_address.yaml": {
+                    "contents": [
+                        "# The email addresses and bounces of phil/email-address-bundle: see vendor/phil/email-address-bundle/doc/configuration.md",
+                        "# for every option.",
+                        "phil_email_address:",
+                        "    # Looks up a mail server of the domain of each address.",
+                        "    check_mail_server: false",
+                        "    # The route the email field's Stimulus controller reads its lists from.",
+                        "    suggestions:",
+                        "        url: /email-address/domains.json",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_email_address.yaml": {
+                    "contents": [
+                        "# The known domains the email field's Stimulus controller suggests from.",
+                        "phil_email_address:",
+                        "    resource: '@PhilEmailAddressBundle/config/routes.php'",
+                        "    prefix: /email-address",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "8cbb8757c13d4ce8fbac931104eac22b2df9b01b"
+        }
+    }
+}

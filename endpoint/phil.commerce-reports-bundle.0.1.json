@@ -1,0 +1,29 @@
+{
+    "manifests": {
+        "phil/commerce-reports-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CommerceReportsBundle\\PhilCommerceReportsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_commerce_reports.yaml": {
+                    "contents": [
+                        "# The sales, sell-through and dead stock reports, among the reports of phil/reporting-bundle. The installation guide of",
+                        "# phil/commerce-reports-bundle names the ports to connect.",
+                        "phil_commerce_reports:",
+                        "    dead_stock_days: 90",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "7e4908bc498fbdfe6eb7f02d649f933b92f77df1"
+        }
+    }
+}

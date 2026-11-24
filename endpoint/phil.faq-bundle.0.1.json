@@ -1,0 +1,55 @@
+{
+    "manifests": {
+        "phil/faq-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\FaqBundle\\PhilFaqBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_faq.yaml": {
+                    "contents": [
+                        "# The questions of the site. A search without answer links to the contact form below; the administration opens to the",
+                        "# role below once its routes are mounted behind the firewall. See the configuration guide of phil/faq-bundle.",
+                        "phil_faq:",
+                        "    contact_url: /contact",
+                        "    admin:",
+                        "        enabled: false",
+                        "        role: ROLE_ADMIN",
+                        "        locales: [en]",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_faq.yaml": {
+                    "contents": [
+                        "# The page of questions, its votes and its searches without answer.",
+                        "phil_faq:",
+                        "    resource: '@PhilFaqBundle/config/routes.php'",
+                        "    prefix: /faq",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "post-install.txt": {
+                    "contents": [
+                        "  * Install the recipes of the kit the questions draw:",
+                        "    <comment>php bin/console ux:install button --kit=github.com/parler-haut-interagir-librement/ux-kit</>",
+                        "    <comment>php bin/console ux:install input --kit=github.com/parler-haut-interagir-librement/ux-kit</>",
+                        "    <comment>php bin/console ux:install copy-button --kit=github.com/parler-haut-interagir-librement/ux-kit</>",
+                        "  * Create the tables: <comment>php bin/console make:migration</> then <comment>php bin/console doctrine:migrations:migrate</>.",
+                        "  * Set <comment>contact_url</> in <comment>config/packages/phil_faq.yaml</>, then open <comment>/faq/</>.",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "c6e2dae4b30a9fb0dc217b4ccf299bab98529534"
+        }
+    }
+}

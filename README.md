@@ -30,12 +30,17 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/calendar-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_calendar.yaml` and the routes of `config/routes/phil_calendar.yaml` |
 | `phil/commerce-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce.yaml` and the routes of `config/routes/phil_commerce.yaml` |
 | `phil/commerce-consignment-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce_consignment.yaml` |
+| `phil/commerce-reports-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce_reports.yaml` |
 | `phil/conversation-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_conversation.yaml` and the routes of `config/routes/phil_conversation.yaml`, and adds `PHIL_CONVERSATION_KEY` to `.env` |
 | `phil/courses-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_courses.yaml` and the routes of `config/routes/phil_courses.yaml`, and adds `PHIL_COURSES_CONTENT_URL` and `PHIL_COURSES_HOME_PAGE` to `.env` |
 | `phil/data-table-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_data_table.yaml` and the routes of `config/routes/phil_data_table.yaml` |
 | `phil/document-import-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_document_import.yaml` |
+| `phil/email-address-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_email_address.yaml` and the routes of `config/routes/phil_email_address.yaml` |
 | `phil/embed-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_embed.yaml` and the routes of `config/routes/phil_embed.yaml`, and adds `EMBED_KEY` to `.env` |
 | `phil/error-tracking-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_error_tracking.yaml` and the routes of `config/routes/phil_error_tracking.yaml` |
+| `phil/faq-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_faq.yaml` and the routes of `config/routes/phil_faq.yaml` |
+| `phil/feed-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_feed.yaml` and the routes of `config/routes/phil_feed.yaml` |
+| `phil/follow-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_follow.yaml` and the routes of `config/routes/phil_follow.yaml` |
 | `phil/forms-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_forms.yaml` and the routes of `config/routes/phil_forms.yaml` |
 | `phil/helpdesk-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_helpdesk.yaml` and the routes of `config/routes/phil_helpdesk.yaml` |
 | `phil/identity-provider-bundle` | 0.1, 0.3 | Registers the bundle, writes `config/packages/phil_identity_provider.yaml` and the routes of `config/routes/phil_identity_provider.yaml`; from 0.3, with `public_origin` read from `APP_PUBLIC_ORIGIN` |
@@ -59,11 +64,13 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/reservation-bundle` | 0.1 | Registers the bundle |
 | `phil/reviews-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_reviews.yaml` and the routes of `config/routes/phil_reviews.yaml` |
 | `phil/saml-sp-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_saml_sp.yaml` and the routes of `config/routes/phil_saml_sp.yaml`, and adds `SAML_SP_CERTIFICATE` and `SAML_SP_PRIVATE_KEY` to `.env` |
+| `phil/scheduling-poll-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_scheduling_poll.yaml` and the routes of `config/routes/phil_scheduling_poll.yaml`, and adds `SCHEDULING_POLL_LINK_KEY` to `.env` |
 | `phil/settings-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_settings.yaml` and the routes of `config/routes/phil_settings.yaml` |
 | `phil/short-link-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_short_link.yaml` and the routes of `config/routes/phil_short_link.yaml`, and adds `SHORT_LINK_HOST` and `SHORT_LINK_TARGET_HOST` to `.env` |
 | `phil/slides` | 0.1 | Registers the bundle, writes `config/packages/phil_slides.yaml` and the routes of `config/routes/phil_slides.yaml` |
 | `phil/status-page-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_status_page.yaml` and the routes of `config/routes/phil_status_page.yaml` |
 | `phil/stockroom-bundle` | 0.1 | Registers the bundle and writes `config/packages/phil_stockroom.yaml` |
+| `phil/survey-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_survey.yaml` and the routes of `config/routes/phil_survey.yaml` |
 | `phil/terms-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_terms.yaml`, the routes of `config/routes/phil_terms.yaml` and `src/Terms/CurrentMember.php` and `src/Terms/Members.php`, the member services to fill |
 | `phil/user-secrets-bundle` | 0.1 | Registers the bundle and Symfony's KeyManagementBundle, writes `config/packages/phil_user_secrets.yaml` and `config/packages/key_management.yaml`, and adds `USER_SECRETS_KEY_2026` to `.env` |
 | `phil/ux-css` | 0.1 | Writes `config/packages/phil_ux_css.yaml`, which maps `dist/` in AssetMapper as `phil-ux` |
