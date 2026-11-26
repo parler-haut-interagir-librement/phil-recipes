@@ -1,0 +1,37 @@
+{
+    "manifests": {
+        "phil/cors-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CorsBundle\\PhilCorsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "CORS_ALLOW_ORIGIN": "'^https?://(localhost|127\\.0\\.0\\.1)(:[0-9]+)?$'"
+                }
+            },
+            "files": {
+                "config/packages/phil_cors.yaml": {
+                    "contents": [
+                        "# The CORS rules of phil/cors-bundle: see vendor/phil/cors-bundle/doc/configuration.md for every option.",
+                        "phil_cors:",
+                        "    paths:",
+                        "        # The API, for the origins that CORS_ALLOW_ORIGIN matches: a regular expression anchored by ^ and $.",
+                        "        '^/api/':",
+                        "            allow_origin_patterns: ['%env(CORS_ALLOW_ORIGIN)%']",
+                        "            allow_methods: [GET, POST, PUT, PATCH, DELETE]",
+                        "            allow_headers: [Content-Type, Authorization]",
+                        "            max_age: 3600",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "a6bfb0eb24ed75e364ddc1665235a081e1901afe"
+        }
+    }
+}
