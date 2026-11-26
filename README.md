@@ -32,6 +32,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/commerce-consignment-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce_consignment.yaml` |
 | `phil/commerce-reports-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce_reports.yaml` |
 | `phil/conversation-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_conversation.yaml` and the routes of `config/routes/phil_conversation.yaml`, and adds `PHIL_CONVERSATION_KEY` to `.env` |
+| `phil/cors-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_cors.yaml`, and adds `CORS_ALLOW_ORIGIN` to `.env` |
 | `phil/courses-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_courses.yaml` and the routes of `config/routes/phil_courses.yaml`, and adds `PHIL_COURSES_CONTENT_URL` and `PHIL_COURSES_HOME_PAGE` to `.env` |
 | `phil/data-table-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_data_table.yaml` and the routes of `config/routes/phil_data_table.yaml` |
 | `phil/document-import-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_document_import.yaml` |

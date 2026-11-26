@@ -58,6 +58,9 @@
         "phil/conversation-bundle": [
             "0.1"
         ],
+        "phil/cors-bundle": [
+            "0.1"
+        ],
         "phil/courses-bundle": [
             "0.1",
             "0.2"
