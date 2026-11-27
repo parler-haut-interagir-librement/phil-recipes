@@ -1,0 +1,20 @@
+# The circuit breakers of phil/circuit-breaker-bundle: see vendor/phil/circuit-breaker-bundle/doc/configuration.md for
+# every option. In the prod environment, once a circuit is declared, the states must live in a pool every server
+# shares, such as Redis, or single_server must say that there is one server.
+phil_circuit_breaker:
+    # clock: clock
+    # state_store: ~
+    # cache_pool: cache.app
+    # single_server: false
+
+    # One circuit breaker per key; http_client puts that HTTP client behind its circuit.
+    circuits: {}
+        # http.payments:
+        #     failure_rate_percent: 50
+        #     minimum_calls: 10
+        #     window_seconds: 60
+        #     open_seconds: 30
+        #     half_open_successes: 1
+        #     slow_call_milliseconds: 2000
+        #     slow_call_rate_percent: 50
+        #     http_client: payments.client

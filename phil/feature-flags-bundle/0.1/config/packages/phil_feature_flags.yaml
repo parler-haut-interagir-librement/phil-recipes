@@ -1,0 +1,37 @@
+# The feature flags of phil/feature-flags-bundle: see vendor/phil/feature-flags-bundle/doc/configuration.md for every
+# option. As written here, the flags come from this file and every request has an empty context, so a flag with rules
+# or an experiment is off for everyone.
+phil_feature_flags:
+    # The resolver of the context a request is evaluated in. Implement
+    # Phil\FeatureFlagsBundle\Application\Flag\EvaluationContextResolver in src/ and remove this line to target tenants,
+    # projects or subjects.
+    context_resolver: phil_feature_flags.context_resolver.anonymous
+
+    # The database store of active states and of the flags the admin creates. Generate the migration of its two tables
+    # with doctrine:migrations:diff.
+    # doctrine:
+    #     connection: default
+
+    # The audited toggle, which needs a state store (the database store gives one) and two services of the application.
+    # toggle:
+    #     authorizer: App\Flags\ToggleAuthorizer
+    #     auditor: App\Flags\ToggleAuditor
+
+    # The admin screens, which need the toggle; import their routes and put them behind the firewall.
+    # admin:
+    #     actor_provider: App\Flags\ActorProvider
+    #     layout: '@PhilFeatureFlags/admin/layout.html.twig'
+
+    # exposure_recorder: ~
+    # clock: clock
+
+    # The flags of this file, by name: true or false, or a map with active, rules, experiment and metadata.
+    flags: {}
+        # new-checkout:
+        #     active: true
+        #     rules:
+        #         - { attribute: tenant, percentage: 20 }
+        #     description: The one-page checkout.
+        #     owner: checkout-team
+        #     kind: release
+        #     expires_on: '2027-03-31'

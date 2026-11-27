@@ -1,0 +1,5 @@
+  * Declare flags in <comment>config/packages/phil_feature_flags.yaml</>, then list them: <comment>php bin/console phil:feature-flags:list</>.
+  * To target tenants, projects or subjects, implement <comment>EvaluationContextResolver</> and remove <comment>context_resolver</> from the configuration.
+  * For the admin screens, enable <comment>doctrine</>, <comment>toggle</> and <comment>admin</>, create the tables with
+    <comment>php bin/console doctrine:migrations:diff</> then <comment>php bin/console doctrine:migrations:migrate</>, and import
+    <comment>@PhilFeatureFlagsBundle/config/routes/admin.php</> under a prefix that the firewall protects.

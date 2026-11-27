@@ -28,6 +28,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/accessibility-statement-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_accessibility_statement.yaml` and the routes of `config/routes/phil_accessibility_statement.yaml` |
 | `phil/audio-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_audio.yaml` |
 | `phil/calendar-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_calendar.yaml` and the routes of `config/routes/phil_calendar.yaml` |
+| `phil/circuit-breaker-bundle` | 0.2 | Registers the bundle, writes `config/packages/phil_circuit_breaker.yaml`, with its options and an example circuit commented |
 | `phil/commerce-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce.yaml` and the routes of `config/routes/phil_commerce.yaml` |
 | `phil/commerce-consignment-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce_consignment.yaml` |
 | `phil/commerce-reports-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_commerce_reports.yaml` |
@@ -40,6 +41,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/embed-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_embed.yaml` and the routes of `config/routes/phil_embed.yaml`, and adds `EMBED_KEY` to `.env` |
 | `phil/error-tracking-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_error_tracking.yaml` and the routes of `config/routes/phil_error_tracking.yaml` |
 | `phil/faq-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_faq.yaml` and the routes of `config/routes/phil_faq.yaml` |
+| `phil/feature-flags-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_feature_flags.yaml`, with the anonymous context and its other options commented |
 | `phil/feed-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_feed.yaml` and the routes of `config/routes/phil_feed.yaml` |
 | `phil/follow-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_follow.yaml` and the routes of `config/routes/phil_follow.yaml` |
 | `phil/forms-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_forms.yaml` and the routes of `config/routes/phil_forms.yaml` |

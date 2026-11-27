@@ -1,0 +1,54 @@
+{
+    "manifests": {
+        "phil/circuit-breaker-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\CircuitBreakerBundle\\PhilCircuitBreakerBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_circuit_breaker.yaml": {
+                    "contents": [
+                        "# The circuit breakers of phil/circuit-breaker-bundle: see vendor/phil/circuit-breaker-bundle/doc/configuration.md for",
+                        "# every option. In the prod environment, once a circuit is declared, the states must live in a pool every server",
+                        "# shares, such as Redis, or single_server must say that there is one server.",
+                        "phil_circuit_breaker:",
+                        "    # clock: clock",
+                        "    # state_store: ~",
+                        "    # cache_pool: cache.app",
+                        "    # single_server: false",
+                        "",
+                        "    # One circuit breaker per key; http_client puts that HTTP client behind its circuit.",
+                        "    circuits: {}",
+                        "        # http.payments:",
+                        "        #     failure_rate_percent: 50",
+                        "        #     minimum_calls: 10",
+                        "        #     window_seconds: 60",
+                        "        #     open_seconds: 30",
+                        "        #     half_open_successes: 1",
+                        "        #     slow_call_milliseconds: 2000",
+                        "        #     slow_call_rate_percent: 50",
+                        "        #     http_client: payments.client",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "post-install.txt": {
+                    "contents": [
+                        "  * Declare the circuits of your third parties in <comment>config/packages/phil_circuit_breaker.yaml</>.",
+                        "  * Before the prod environment, give them a shared pool (<comment>cache_pool</>, for instance on <comment>cache.adapter.redis</>),",
+                        "    or set <comment>single_server: true</> on a single server.",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "244306fd074258f80969183b46629fc58dd05158"
+        }
+    }
+}

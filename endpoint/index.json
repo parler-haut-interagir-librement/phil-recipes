@@ -16,6 +16,9 @@
         "phil/calendar-bundle": [
             "0.1"
         ],
+        "phil/circuit-breaker-bundle": [
+            "0.2"
+        ],
         "phil/commerce-bundle": [
             "0.1"
         ],
@@ -81,6 +84,9 @@
             "0.1"
         ],
         "phil/faq-bundle": [
+            "0.1"
+        ],
+        "phil/feature-flags-bundle": [
             "0.1"
         ],
         "phil/feed-bundle": [

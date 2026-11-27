@@ -1,0 +1,73 @@
+{
+    "manifests": {
+        "phil/feature-flags-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\FeatureFlagsBundle\\PhilFeatureFlagsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_feature_flags.yaml": {
+                    "contents": [
+                        "# The feature flags of phil/feature-flags-bundle: see vendor/phil/feature-flags-bundle/doc/configuration.md for every",
+                        "# option. As written here, the flags come from this file and every request has an empty context, so a flag with rules",
+                        "# or an experiment is off for everyone.",
+                        "phil_feature_flags:",
+                        "    # The resolver of the context a request is evaluated in. Implement",
+                        "    # Phil\\FeatureFlagsBundle\\Application\\Flag\\EvaluationContextResolver in src/ and remove this line to target tenants,",
+                        "    # projects or subjects.",
+                        "    context_resolver: phil_feature_flags.context_resolver.anonymous",
+                        "",
+                        "    # The database store of active states and of the flags the admin creates. Generate the migration of its two tables",
+                        "    # with doctrine:migrations:diff.",
+                        "    # doctrine:",
+                        "    #     connection: default",
+                        "",
+                        "    # The audited toggle, which needs a state store (the database store gives one) and two services of the application.",
+                        "    # toggle:",
+                        "    #     authorizer: App\\Flags\\ToggleAuthorizer",
+                        "    #     auditor: App\\Flags\\ToggleAuditor",
+                        "",
+                        "    # The admin screens, which need the toggle; import their routes and put them behind the firewall.",
+                        "    # admin:",
+                        "    #     actor_provider: App\\Flags\\ActorProvider",
+                        "    #     layout: '@PhilFeatureFlags/admin/layout.html.twig'",
+                        "",
+                        "    # exposure_recorder: ~",
+                        "    # clock: clock",
+                        "",
+                        "    # The flags of this file, by name: true or false, or a map with active, rules, experiment and metadata.",
+                        "    flags: {}",
+                        "        # new-checkout:",
+                        "        #     active: true",
+                        "        #     rules:",
+                        "        #         - { attribute: tenant, percentage: 20 }",
+                        "        #     description: The one-page checkout.",
+                        "        #     owner: checkout-team",
+                        "        #     kind: release",
+                        "        #     expires_on: '2027-03-31'",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "post-install.txt": {
+                    "contents": [
+                        "  * Declare flags in <comment>config/packages/phil_feature_flags.yaml</>, then list them: <comment>php bin/console phil:feature-flags:list</>.",
+                        "  * To target tenants, projects or subjects, implement <comment>EvaluationContextResolver</> and remove <comment>context_resolver</> from the configuration.",
+                        "  * For the admin screens, enable <comment>doctrine</>, <comment>toggle</> and <comment>admin</>, create the tables with",
+                        "    <comment>php bin/console doctrine:migrations:diff</> then <comment>php bin/console doctrine:migrations:migrate</>, and import",
+                        "    <comment>@PhilFeatureFlagsBundle/config/routes/admin.php</> under a prefix that the firewall protects.",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "d09f02f2ecf9355f5a4dff40f3c5dc072cd7e110"
+        }
+    }
+}
