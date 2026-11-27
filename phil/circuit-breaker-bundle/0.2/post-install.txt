@@ -1,0 +1,3 @@
+  * Declare the circuits of your third parties in <comment>config/packages/phil_circuit_breaker.yaml</>.
+  * Before the prod environment, give them a shared pool (<comment>cache_pool</>, for instance on <comment>cache.adapter.redis</>),
+    or set <comment>single_server: true</> on a single server.
