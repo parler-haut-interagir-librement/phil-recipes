@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/waitlist-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\WaitlistBundle\\PhilWaitlistBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "bf2d381eb8d9419db0a99d1c5c37908ff5dbccc0"
+        }
+    }
+}

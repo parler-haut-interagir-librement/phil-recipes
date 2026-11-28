@@ -1,0 +1,59 @@
+{
+    "manifests": {
+        "phil/email-templates-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\EmailTemplatesBundle\\PhilEmailTemplatesBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/",
+                    "email_templates/": "email_templates/"
+                }
+            },
+            "files": {
+                "config/packages/phil_email_templates.yaml": {
+                    "contents": [
+                        "# Email templates shared by the sites: the default files of email_templates/ override those of the bundle, and each",
+                        "# site drafts, publishes and versions its own as contents of phil/content-bundle \u2014 declare every locale they are",
+                        "# written in under phil_content.locales. See the configuration guide of phil/email-templates-bundle.",
+                        "phil_email_templates:",
+                        "    default_locale: '%kernel.default_locale%'",
+                        "    # from: 'Shop <shop@example.com>'",
+                        "    # brand: { name: 'Shop', logo: 'https://example.com/logo.png' }",
+                        "    # embeds: { directory: '%kernel.project_dir%/email_templates/images' }",
+                        "    admin:",
+                        "        enabled: false",
+                        "        role: ROLE_ADMIN",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_email_templates_admin.yaml": {
+                    "contents": [
+                        "# The administration of the email templates, when phil_email_templates.admin.enabled is true. Keep it behind the",
+                        "# firewall: every page asks phil_email_templates.admin.role again.",
+                        "phil_email_templates_admin:",
+                        "    resource: '@PhilEmailTemplatesBundle/config/routes_admin.php'",
+                        "    prefix: /admin/email-templates",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "email_templates/README.md": {
+                    "contents": [
+                        "# Default email templates",
+                        "",
+                        "One YAML file per template and locale, `<key>.<locale>.yaml`, as `ticket.fr.yaml`. A file here overrides the file of",
+                        "the same name of phil/email-templates-bundle; a new key adds a template the sites may then edit. Check them with",
+                        "`bin/console phil:email-templates:check`.",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "1019f3ccb98503e57f6bbdbad6d1b80411b64105"
+        }
+    }
+}

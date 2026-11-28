@@ -1,0 +1,44 @@
+{
+    "manifests": {
+        "phil/shifts-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\ShiftsBundle\\PhilShiftsBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_shifts.yaml": {
+                    "contents": [
+                        "# The volunteer shifts: see vendor/phil/shifts-bundle/doc/configuration.md for every option.",
+                        "phil_shifts:",
+                        "    # The time zone the pages show the shifts in and the form reads them in, UTC unless set.",
+                        "    # time_zone: America/Toronto",
+                        "    # The minutes a volunteer rests between two fixed shifts they hold, none unless set.",
+                        "    # rest_minutes: 30",
+                        "    # roles:",
+                        "    #     The coordinators, who plan shifts, assign volunteers and approve swaps.",
+                        "    #     coordinator: ROLE_SHIFTS_COORDINATOR",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_shifts.yaml": {
+                    "contents": [
+                        "# The pages of the volunteer shifts, under the prefix of your choice.",
+                        "phil_shifts:",
+                        "    resource: '@PhilShiftsBundle/config/routes.php'",
+                        "    prefix: /shifts",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "ae5c7f2e0b1590ea691af146ef639ad4ee9efc31"
+        }
+    }
+}

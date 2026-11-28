@@ -1,0 +1,14 @@
+{
+    "manifests": {
+        "phil/workshops-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\WorkshopsBundle\\PhilWorkshopsBundle": [
+                        "all"
+                    ]
+                }
+            },
+            "ref": "c4254d929df0062b025c8834892c7b00eb4f3f69"
+        }
+    }
+}

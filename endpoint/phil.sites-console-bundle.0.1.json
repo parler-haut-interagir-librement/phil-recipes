@@ -1,0 +1,53 @@
+{
+    "manifests": {
+        "phil/sites-console-bundle": {
+            "manifest": {
+                "bundles": {
+                    "Phil\\SitesConsoleBundle\\PhilSitesConsoleBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                }
+            },
+            "files": {
+                "config/packages/phil_sites_console.yaml": {
+                    "contents": [
+                        "# The console that operates several sites, and the agent each site runs for it. Generate a key pair for each side with",
+                        "# `php bin/console phil:sites-console:keys`, keep the private keys in secrets, and turn on the half this application",
+                        "# is. See the configuration guide of phil/sites-console-bundle.",
+                        "phil_sites_console:",
+                        "    # console:",
+                        "    #     enabled: true",
+                        "    #     private_key: '%env(SITES_CONSOLE_PRIVATE_KEY)%'",
+                        "    #     # next_private_key: '%env(SITES_CONSOLE_NEXT_PRIVATE_KEY)%'   # during a rotation of the console key",
+                        "    # agent:",
+                        "    #     enabled: true",
+                        "    #     site_id: my-site",
+                        "    #     private_key: '%env(SITES_CONSOLE_AGENT_KEY)%'",
+                        "    #     console_public_key: '%env(SITES_CONSOLE_PUBLIC_KEY)%'",
+                        "    #     # key_pool: cache.persistent   # the console keys a rotation stages; shared, surviving deploys",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/phil_sites_console.yaml": {
+                    "contents": [
+                        "# The console's screens, behind a firewall that gives the roles of the console, and the agent's signed endpoints,",
+                        "# outside any firewall. Keep the import of the half this application is.",
+                        "# phil_sites_console:",
+                        "#     resource: '@PhilSitesConsoleBundle/config/routes/console.php'",
+                        "#     prefix: /admin/sites",
+                        "# phil_sites_console_agent:",
+                        "#     resource: '@PhilSitesConsoleBundle/config/routes/agent.php'",
+                        "#     prefix: /_sites-console",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "e6f6bc987847d177c9d4d09537f1532c0f5cd201"
+        }
+    }
+}
