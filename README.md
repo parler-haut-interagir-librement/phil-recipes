@@ -38,6 +38,7 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/data-table-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_data_table.yaml` and the routes of `config/routes/phil_data_table.yaml` |
 | `phil/document-import-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_document_import.yaml` |
 | `phil/email-address-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_email_address.yaml` and the routes of `config/routes/phil_email_address.yaml` |
+| `phil/email-templates-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_email_templates.yaml`, the admin routes of `config/routes/phil_email_templates_admin.yaml`, and an `email_templates/` folder with its README |
 | `phil/embed-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_embed.yaml` and the routes of `config/routes/phil_embed.yaml`, and adds `EMBED_KEY` to `.env` |
 | `phil/error-tracking-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_error_tracking.yaml` and the routes of `config/routes/phil_error_tracking.yaml` |
 | `phil/faq-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_faq.yaml` and the routes of `config/routes/phil_faq.yaml` |
@@ -69,7 +70,9 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/saml-sp-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_saml_sp.yaml` and the routes of `config/routes/phil_saml_sp.yaml`, and adds `SAML_SP_CERTIFICATE` and `SAML_SP_PRIVATE_KEY` to `.env` |
 | `phil/scheduling-poll-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_scheduling_poll.yaml` and the routes of `config/routes/phil_scheduling_poll.yaml`, and adds `SCHEDULING_POLL_LINK_KEY` to `.env` |
 | `phil/settings-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_settings.yaml` and the routes of `config/routes/phil_settings.yaml` |
+| `phil/shifts-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_shifts.yaml` and the routes of `config/routes/phil_shifts.yaml` |
 | `phil/short-link-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_short_link.yaml` and the routes of `config/routes/phil_short_link.yaml`, and adds `SHORT_LINK_HOST` and `SHORT_LINK_TARGET_HOST` to `.env` |
+| `phil/sites-console-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_sites_console.yaml` and the routes of `config/routes/phil_sites_console.yaml` |
 | `phil/slides` | 0.1 | Registers the bundle, writes `config/packages/phil_slides.yaml` and the routes of `config/routes/phil_slides.yaml` |
 | `phil/status-page-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_status_page.yaml` and the routes of `config/routes/phil_status_page.yaml` |
 | `phil/stockroom-bundle` | 0.1 | Registers the bundle and writes `config/packages/phil_stockroom.yaml` |
@@ -78,6 +81,8 @@ A `composer require` of a package listed here then applies its recipe.
 | `phil/user-secrets-bundle` | 0.1 | Registers the bundle and Symfony's KeyManagementBundle, writes `config/packages/phil_user_secrets.yaml` and `config/packages/key_management.yaml`, and adds `USER_SECRETS_KEY_2026` to `.env` |
 | `phil/ux-css` | 0.1 | Writes `config/packages/phil_ux_css.yaml`, which maps `dist/` in AssetMapper as `phil-ux` |
 | `phil/ux-easyadmin-bundle` | 0.1 | Registers the bundle, writes `config/packages/phil_ux_easy_admin.yaml` |
+| `phil/waitlist-bundle` | 0.1 | Registers the bundle |
+| `phil/workshops-bundle` | 0.1 | Registers the bundle |
 
 ## Layout
 
